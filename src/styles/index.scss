@@ -1,0 +1,533 @@
+body,
+div,
+span,
+header,
+footer,
+nav,
+section,
+aside,
+article,
+ul,
+dl,
+dt,
+dd,
+li,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+b,
+textarea,
+button,
+input,
+select,
+figure,
+figcaption {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    text-decoration: none;
+    border: none;
+    // color: #333;
+    font-weight: normal;
+    font-family: "Microsoft Yahei";
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+
+    &:hover {
+        outline: none;
+    }
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+textarea {
+    -webkit-appearance: none;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #F5F5F5;
+}
+
+
+.clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear {
+    zoom: 1;
+}
+
+.back_img {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.margin {
+    margin: 0 auto;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@keyframes backOpacity {
+    0% {
+        opacity: 1
+    }
+
+    25% {
+        opacity: .5
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    75% {
+        opacity: .5
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+.animation_opactiy {
+    animation: backOpacity 2s ease-in-out infinite;
+}
+
+label {
+    font-weight: 700;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.padding-content {
+    padding: 4px 0;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+
+.pointer {
+    cursor: pointer;
+}
+
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+}
+
+aside {
+    background: #eef1f6;
+    padding: 8px 24px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    display: block;
+    line-height: 32px;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    color: #2c3e50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    a {
+        color: #337ab7;
+        cursor: pointer;
+
+        &:hover {
+            color: rgb(32, 160, 255);
+        }
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+//main-container全局样式
+
+.kg-all {
+    width: 100%;
+    height: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 小升初以及幼升小不同主题
+$color_one: #1aa5fe;
+$color_one_active: #1894e3;
+$color_two: #25bd74;
+$color_two_active: #1da162;
+$color_two_text: #ffaa1e;
+
+.project_1 {
+    .entrance-box {
+        .login-box {
+            @include bg('../assets/img/index-bg.jpg');
+
+            .btn-login {
+                background-image: linear-gradient(-90deg,
+                        #147ae8 0%,
+                        #26c5ff 100%,
+                        #36cbbb 100%,
+                        #45d077 100%),
+                    linear-gradient(#ffffff,
+                        #ffffff);
+                background-blend-mode: normal,
+                    normal;
+
+                &:active {
+                    background-color: $color_one_active;
+                }
+            }
+
+            .btn-register {
+                @include flexcenter;
+            }
+        }
+
+        .select {
+            color: $color_one !important;
+        }
+
+        .top {
+            @include bg('../assets/img/my-bg.png');
+        }
+
+        .signup {
+            .text {
+                color: $color_one !important;
+
+                /deep/ .van-icon {
+                    color: $color_one;
+                    margin-right: 4px;
+                }
+            }
+        }
+
+        .record {
+            .img {
+                @include bg('../assets/img/icon-bm.png');
+            }
+        }
+    }
+
+    .login-box {
+        .zc {
+            color: $color_one;
+        }
+
+        .btn {
+            background: rgba($color: $color_one, $alpha: 1);
+
+            &:active {
+                background: $color_one_active;
+            }
+        }
+
+        .actived {
+            background: rgba($color: $color_one, $alpha: 0.4);
+        }
+    }
+
+    .find-password-box {
+
+        .right,
+        .btn {
+            background: rgba($color: $color_one, $alpha: 1);
+
+            &:active {
+                background: $color_one_active;
+            }
+        }
+
+        .actived {
+            background: rgba($color: $color_one, $alpha: 0.4);
+        }
+    }
+
+    .detail-box {
+        .img {
+            @include bg('../assets/img/icon-bm.png');
+        }
+    }
+
+    .sign-box {
+        .active {
+            background-color: #e5f2fc !important;
+            color: $color_one !important;
+        }
+
+        .group-title {
+            .del {
+                color: $color_one;
+            }
+        }
+
+        .add {
+            color: $color_one;
+
+            /deep/ .van-icon {
+                color: $color_one;
+                margin-right: 4px;
+            }
+        }
+
+        .bottom {
+            .submit {
+                background-color: $color_one;
+
+                &:active {
+                    background-color: $color_one_active;
+                }
+            }
+
+            .draft {
+                border: 1px solid $color_one;
+                color: $color_one;
+
+                &:active {
+                    background: #e3f4ff;
+                }
+            }
+        }
+    }
+}
+
+.project_2 {
+    .entrance-box {
+        .login-box {
+            @include bg('../assets/img/index-bg-two.png');
+
+            .btn-login {
+                background-image: linear-gradient(-90deg,
+                        #16bd84 0%,
+                        #32e9af 100%),
+                    linear-gradient(#ffffff,
+                        #ffffff);
+                background-blend-mode: normal,
+                    normal;
+
+                &:active {
+                    background-color: $color_two_active;
+                }
+            }
+
+            .btn-register {
+                display: none;
+            }
+        }
+
+        .select {
+            color: $color_two_text !important;
+        }
+
+        .top {
+            @include bg('../assets/img/my-bg-two.png');
+        }
+
+        .signup {
+            .text {
+                color: $color_two_text !important;
+
+                /deep/ .van-icon {
+                    color: $color_two_text;
+                    margin-right: 4px;
+                }
+            }
+        }
+
+        .record {
+            .img {
+                @include bg('../assets/img/icon-bm-two.png');
+            }
+        }
+    }
+
+    .login-box {
+        .zc {
+            display: none;
+            color: $color_two;
+        }
+
+        .btn {
+            background: rgba($color: $color_two, $alpha: 1);
+
+            &:active {
+                background: $color_two_active;
+            }
+        }
+
+        .actived {
+            background: rgba($color: $color_two, $alpha: 0.4);
+        }
+    }
+
+    .find-password-box {
+
+        .right,
+        .btn {
+            background: rgba($color: $color_two, $alpha: 1);
+
+            &:active {
+                background: $color_two_active;
+            }
+        }
+
+        .actived {
+            background: rgba($color: $color_two, $alpha: 0.4);
+        }
+    }
+
+    .detail-box {
+        .img {
+            @include bg('../assets/img/icon-bm-two.png');
+        }
+    }
+
+    .sign-box {
+        .active {
+            background-color: #e5f2fc !important;
+            color: $color_two !important;
+        }
+
+        .group-title {
+            .del {
+                color: $color_two;
+            }
+        }
+
+        .add {
+            color: $color_two;
+
+            /deep/ .van-icon {
+                color: $color_two;
+                margin-right: 4px;
+            }
+        }
+
+        .bottom {
+            .submit {
+                background-color: $color_two;
+
+                &:active {
+                    background-color: $color_two_active;
+                }
+            }
+
+            .draft {
+                border: 1px solid $color_two;
+                color: $color_two;
+
+                &:active {
+                    background-color: #e5fbf1;
+                }
+            }
+        }
+    }
+}
+
+.popover-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 140px;
+    padding: 5px;
+
+    .text {
+        font-size: 12px;
+        text-align: center;
+        color: #333;
+        margin-bottom: 5px;
+    }
+}
